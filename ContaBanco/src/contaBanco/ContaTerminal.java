@@ -1,10 +1,13 @@
 package contaBanco;
 import java.util.Scanner;
+import java.util.Locale;
+
 
 public class ContaTerminal {
 
 	public static void main(String[] args) {		
 		var scanner = new Scanner(System.in);
+		scanner.useLocale(Locale.US);
 
 		System.out.println("Por favor, digite o número da conta!");
 		int numConta = scanner.nextInt();
