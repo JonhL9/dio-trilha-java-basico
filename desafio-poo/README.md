@@ -1,24 +1,60 @@
 ```mermaid
 classDiagram
-    class ReprodutorMusical {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+    class IPod {
+        +avanvar()
+        +recuar()
+        +favoritar()
     }
+    IPod : -List~Musica~ musicasFavoritas
 
     class AparelhoTelefonico {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+        
+        +ligar(String numero)
+        +atender()
+        +iniciarCorreioVoz()
     }
+    AparelhoTelefonico : -List~Contatos~ contatos
 
-    class NavegadorInternet {
-        +exemploMetodo1()
-        +exemploMetodo2(String exemplo)
+    class Safari {
+        +favoritar()
     }
+    Safari : -List~String~ paginasFavoritas
 
     class iPhone {
     }
 
-    iPhone --> ReprodutorMusical
+    class Musica {
+        -String nome
+        -String artista
+    }
+
+    class Contato {
+        -String nome
+        -String numero
+    }
+
+    class ReprodutorMusical{
+    <<interface>>
+    +tocar()
+    +pausar()
+    +selecionarMusica(String musica)
+    }
+
+    class NavegadorInternet{
+    <<interface>>
+    
+    +exibirPagina(String url)
+    +adicionarNovaAba()
+    +atualizarPagina()
+    }
+
+    iPhone --> IPod
     iPhone --> AparelhoTelefonico
-    iPhone --> NavegadorInternet
+    iPhone --> Safari
+
+    IPod ..|> ReprodutorMusical
+    Safari ..|> NavegadorInternet
+
+    IPod --o Musica
+    AparelhoTelefonico --* Contato
 ```
