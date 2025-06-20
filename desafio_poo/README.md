@@ -14,8 +14,6 @@ Com base no vídeo de [Lançamento iPhone 2007](https://www.youtube.com/watch?v=
 ```mermaid
 classDiagram
     class Apple_Music {
-        +avanvar()
-        +recuar()
         +favoritar()
     }
     Apple_Music : -List~String~ musicasFavoritas
@@ -26,7 +24,7 @@ classDiagram
         +atender()
         +iniciarCorreioVoz()
     }
-    AparelhoTelefonico : -List~Contatos~ contatos
+    AparelhoTelefonico : -List~Contato~ contatos
 
     class Safari {
         +favoritar()
