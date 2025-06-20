@@ -13,12 +13,12 @@ Com base no vídeo de [Lançamento iPhone 2007](https://www.youtube.com/watch?v=
 ### Resultado
 ```mermaid
 classDiagram
-    class IPod {
+    class Apple_Music {
         +avanvar()
         +recuar()
         +favoritar()
     }
-    IPod : -List~Musica~ musicasFavoritas
+    Apple_Music : -List~String~ musicasFavoritas
 
     class AparelhoTelefonico {
         
@@ -34,11 +34,6 @@ classDiagram
     Safari : -List~String~ paginasFavoritas
 
     class iPhone {
-    }
-
-    class Musica {
-        -String nome
-        -String artista
     }
 
     class Contato {
@@ -61,13 +56,13 @@ classDiagram
     +atualizarPagina()
     }
 
-    iPhone --> IPod
+    iPhone --> Apple_Music
     iPhone --> AparelhoTelefonico
     iPhone --> Safari
 
-    IPod ..|> ReprodutorMusical
+    Apple_Music ..|> ReprodutorMusical
     Safari ..|> NavegadorInternet
 
-    IPod --o Musica
+    
     AparelhoTelefonico --* Contato
 ```
